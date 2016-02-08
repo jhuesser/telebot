@@ -8,7 +8,7 @@ Instructions
 
 1. Message @botfather https://telegram.me/botfather with the following text: `/newbot`
    If you don't know how to message by username, click the search field on your Telegram app and type `@botfather`, you should be able to initiate a conversation. Be careful not to send it to the wrong contact, because some users has similar usernames to `botfather`.
-   
+
    ![botfather initial conversation](http://i.imgur.com/pGOtOcj.png)
 
 2. @botfather replies with `Alright, a new bot. How are we going to call it? Please choose a name for your bot.`
@@ -17,7 +17,7 @@ Instructions
 
 4. @botfather replies with `Good. Now let's choose a username for your bot. It must end in `bot`. Like this, for example: TetrisBot or tetris_bot.`
 
-5. Type whatever username you want for your bot, minimum 5 characters, and must end with `bot`. For example: `whateversamplebot` 
+5. Type whatever username you want for your bot, minimum 5 characters, and must end with `bot`. For example: `whateversamplebot`
 
 6. @botfather replies with:
 
@@ -27,7 +27,7 @@ Instructions
     <b>123456789:AAG90e14-0f8-40183D-18491dDE</b>
 
     For a description of the Bot API, see this page: https://core.telegram.org/bots/api
-    
+
 7. Note down the 'token' mentioned above.
 
 8. Type `/setprivacy` to @botfather.
@@ -43,7 +43,7 @@ Instructions
     'Enable' - your bot will only receive messages that either start with the '/' symbol or mention the bot by username.
     'Disable' - your bot will receive all messages that people send to groups.
     Current status is: ENABLED
-    
+
 12. Type `Disable` to let your bot receive all messages sent to a group. This step is up to you actually.
 
 13. @botfather replies with `Success! The new status is: DISABLED. /help`
@@ -55,7 +55,7 @@ Instructions
 16. Type the project name, whatever you want. For example: `octopus-gorilla-123`. Make sure the Project ID is also the same.
 
     ![App Engine registration](http://i.imgur.com/mxw8owO.png)
-    
+
 17. Clone this repository. If you don't understand what I am saying, click the `Download ZIP` button on the lower-right of this page, and extract the ZIP file.
 
 18. Open `app.yaml` file using a good text editor like Sublime Text. Change the `YOUR_APP_ID_HERE` to the Project ID you set on step 16, and save the file.
@@ -91,4 +91,3 @@ Instructions
 30. Try sending more messages and you should see replies from the bot. Mission completed!
 
 To customize the bot, edit the `main.py` starting from the `CUSTOMIZE FROM HERE` line. It is simple if-else statements. The starter kit calls simsimi.com to generate replies.
-

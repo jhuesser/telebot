@@ -4,6 +4,7 @@ import logging
 import random
 import urllib
 import urllib2
+import random
 
 # for sending images
 from PIL import Image
@@ -14,9 +15,11 @@ from google.appengine.api import urlfetch
 from google.appengine.ext import ndb
 import webapp2
 
-TOKEN = 'YOUR_BOT_TOKEN_HERE'
+TOKEN = '156774635:AAG2zWtpv3PnW7g1dFYZhY49I5TSxUJsUCg'
 
 BASE_URL = 'https://api.telegram.org/bot' + TOKEN + '/'
+
+TEST_VALUE = 'testuser'
 
 
 # ================================
@@ -120,15 +123,56 @@ class WebhookHandler(webapp2.RequestHandler):
                 output = StringIO.StringIO()
                 img.save(output, 'JPEG')
                 reply(img=output.getvalue())
-            else:
-                reply('What command?')
+            elif text == '/ping':
+                reply('Pong')
+            elif text == '/help':
+                reply('Until now I can do nothing')
+            elif text == '/botinfo':
+                reply('name: slavebot \nbotname: @ultraslavebot \nadmin: @jhusser \nprivacy: disabled\n groups: enabled')
+            elif text == '/hodor':
+
+                    reply('HODOR!')
+            elif text == '/test':
+
+                    reply('/hodor')
+            elif text == '/shutdown':
+
+                    reply('Attention! Bot is going to sleep.')
+
+
+            elif text == '/whoareyou':
+                    reply("I'm a very usefull bot")
+
+         elif text == '/rolldice':
+                DICENUMBER = random.randint(1,6)
+                reply(DICENUMBER)
+
+        elif text == '/newmsg':
+                reply("test")
+
+
+
 
         # CUSTOMIZE FROM HERE
 
-        elif 'who are you' in text:
-            reply('telebot starter kit, created by yukuku: https://github.com/yukuku/telebot')
+
         elif 'what time' in text:
             reply('look at the top-right corner of your screen!')
+        elif text == 'H':
+            reply('O')
+            Htester = 'true'
+        elif text == 'O':
+            reply('D')
+        elif text == 'D':
+            reply('O')
+        elif text == '0':
+            reply('R')
+        elif text == 'R':
+            reply('Htester: ' + Htester)
+            Htester = 'false'
+            reply('Htester: ' + Htester)
+
+
         else:
             if getEnabled(chat_id):
                 try:
@@ -145,6 +189,8 @@ class WebhookHandler(webapp2.RequestHandler):
                     reply(back)
             else:
                 logging.info('not enabled for chat_id {}'.format(chat_id))
+
+
 
 
 app = webapp2.WSGIApplication([
